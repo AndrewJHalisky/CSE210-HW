@@ -7,6 +7,7 @@ public class Journal
     public string _file;
 
     public List<Entry> _entries = new List<Entry>();
+    public DateTime _date = DateTime.Now;
 
     // Saving to a file
     public void SaveToFile(List<Entry> _entries)
@@ -15,9 +16,12 @@ public class Journal
         string fileName = "journal.txt";
         using (StreamWriter outputFile = new StreamWriter(fileName))
         {
-            foreach (Entry entry in _entries)
+            foreach (Entry q in _entries)
             {
-                outputFile.WriteLine(entry._prompt);
+                outputFile.WriteLine(_date);
+                outputFile.WriteLine();
+                outputFile.WriteLine(q._prompt);
+                outputFile.WriteLine(_entries);
             }
         }
     }
@@ -25,7 +29,6 @@ public class Journal
     public List<Entry> ReadFromFile()
     {
         Console.WriteLine("Loading list from file...");
-        List<Entry> _entries = new List<Entry>();
         string fileName = "journal.txt";
 
         string[] lines = System.IO.File.ReadAllLines(fileName);
@@ -41,6 +44,7 @@ public class Journal
         }
         return _entries;
     }
+
 
     public void DisplayEntries()
     {

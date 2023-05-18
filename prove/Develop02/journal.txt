@@ -1,2 +1,4 @@
-What are some things I feel like I can do to be more independent?
-What is the greatest thing I have acheived in my life?
+5/18/2023 5:36:46 PM
+
+If I could go anywhere in the world, where would it be?
+System.Collections.Generic.List`1[Entry]
