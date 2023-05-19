@@ -45,7 +45,6 @@ public class Journal
         return _entries;
     }
 
-
     public void DisplayEntries()
     {
         foreach (Entry entry in _entries)
