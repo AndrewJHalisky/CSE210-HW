@@ -4,45 +4,50 @@ using System.IO;
 
 public class Journal
 {
-    public string _file;
-
+    public string _fileName;
     public List<Entry> _entries = new List<Entry>();
     public DateTime _date = DateTime.Now;
 
     // Saving to a file
-    public void SaveToFile(List<Entry> _entries)
+    public void SaveToFile()
     {
-        Console.WriteLine("Saving to file....");
-        string fileName = "journal.txt";
-        using (StreamWriter outputFile = new StreamWriter(fileName))
+        string file = _fileName;
+        using (StreamWriter outputFile = new StreamWriter(file))
         {
             foreach (Entry q in _entries)
             {
-                outputFile.WriteLine(_date);
-                outputFile.WriteLine();
+                outputFile.WriteLine(q._date);
                 outputFile.WriteLine(q._prompt);
-                outputFile.WriteLine(_entries);
+                outputFile.WriteLine(q._userData);
             }
         }
     }
     // Loading from a file
-    public List<Entry> ReadFromFile()
+    public void ReadFromFile()
     {
-        Console.WriteLine("Loading list from file...");
-        string fileName = "journal.txt";
+        string file = _fileName;
+        string[] lines = System.IO.File.ReadAllLines(file);
 
-        string[] lines = System.IO.File.ReadAllLines(fileName);
+        int side = lines.Length;
+        side = side - 1;
 
-        foreach (string line in lines)
+        int d = 0;
+        int p = 1;
+        int a = 2;
+
+        for (int f = 0; f <= side; f = f + 3)
         {
-            // Console.WriteLine(line);
-            // Console will write the answer with this.
-            string[] parts = line.Split(",");
+            Entry entry = new Entry();
+            entry._date = lines[d];
+            entry._prompt = lines[p];
+            entry._prompt = lines[a];
 
-            Entry _userData = new Entry();
-            _entries.Add(_userData);
+            d = d + 3;
+            p = p + 3;
+            a = a + 3;
+            _entries.Add(entry);
         }
-        return _entries;
+        Console.WriteLine("Journal Load Successful!");
     }
 
     public void DisplayEntries()

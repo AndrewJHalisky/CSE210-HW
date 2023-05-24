@@ -26,6 +26,7 @@ class Program
             {
                 case "1":
                     Entry myEntry = new Entry();
+                    myEntry._date = myPrompt.GetDate();
                     myEntry._prompt = myPrompt.GetPrompt();
                     Console.Write(myEntry._prompt);
                     myEntry._userData = Console.ReadLine();
@@ -38,7 +39,9 @@ class Program
                     myJournal.ReadFromFile();
                     break;
                 case "4":
-                    myJournal.SaveToFile(myJournal._entries);
+                    Console.Write("Please give this file a name: ");
+                    myJournal._fileName = Console.ReadLine();
+                    myJournal.SaveToFile();
                     Console.WriteLine("Journal saved!");
                     break;
                 case "5":

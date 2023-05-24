@@ -17,4 +17,11 @@ class PromptGenerator
         int index = random.Next(_prompts.Count);
         return _prompts[index];
     }
+
+    public string GetDate()
+    {
+        DateTime theCurrentTime = DateTime.Now;
+        string dateText = theCurrentTime.ToShortDateString();
+        return dateText;
+    }
 }
