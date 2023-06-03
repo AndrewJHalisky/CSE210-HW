@@ -28,7 +28,6 @@ namespace Develop03
                     
                     if (user == "quit")
                     {
-                        Console.WriteLine();
                         Console.WriteLine("Thanks for playing! Goodbye for now!");
                         exit = true;
                     }
