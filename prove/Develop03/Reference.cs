@@ -2,7 +2,7 @@ using System;
 
 public class Reference
 {
-    private int _chapter;
+    private int _chapter; 
     private string _book;
     private int _startVerse;
     private int _endVerse;

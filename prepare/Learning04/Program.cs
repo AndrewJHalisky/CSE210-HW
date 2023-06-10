@@ -14,6 +14,5 @@ class Program
         WritingAssignment writingassign1 = new WritingAssignment("Abigail", "American History", "The Boston Massacure");
         Console.WriteLine(writingassign1.GetSummary());
         Console.WriteLine(writingassign1.GetWritingInformation());
-        
     }
 }

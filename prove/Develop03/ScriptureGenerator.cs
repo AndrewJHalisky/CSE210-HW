@@ -3,7 +3,7 @@ using System;
 public class ScriptureGenerator
 {
     List<string> _scriptures = new List<string>
-    { 
+    {
         "Genesis 39:9","There is none greater in this house than I; neither hath he kept back any thing from me but thee, because thou art his wife: how then can I do this great wickedness, and sin against God?",
         "Moses 1:39","For behold, this is my work and my glory—to bring to pass the immortality and eternal life of man.",
         "Psalm 24:4","He that hath clean hands, and a pure heart; who hath not lifted up his soul unto vanity, nor sworn deceitfully.",
