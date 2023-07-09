@@ -1,5 +1,3 @@
-using System;
-
 public class ScriptureGenerator
 {
     List<string> _scriptures = new List<string>

@@ -10,7 +10,6 @@ public class EternalGoal : Goal
         _currentCount = currentCount;
     }
 
-
     public override int RecordEvent()
     {
         Console.Write("How many times did you complete this goal? ");

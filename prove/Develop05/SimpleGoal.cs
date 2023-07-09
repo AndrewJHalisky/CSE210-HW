@@ -16,7 +16,7 @@ public class SimpleGoal : Goal
             _goalComplete = true;
             Console.WriteLine($"You have completed the {_goalTitle} goal! You have earned {_pointValue} points!");
         }
-        else 
+        else
         {
             Console.WriteLine($"You have already completed the {_goalTitle} goal.");
         }

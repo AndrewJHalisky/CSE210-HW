@@ -48,7 +48,6 @@ class Program
                             SimpleGoal simpleGoal = new SimpleGoal(_pointValue, _goalTitle, _goalDescription, false);
                             _goalsList.Add(simpleGoal);
                             break;
-
                         case "2":
                             Console.Write("What is the name of your goal? ");
                             _goalTitle = Console.ReadLine();
