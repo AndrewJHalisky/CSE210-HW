@@ -49,7 +49,7 @@ public class ChecklistGoal : Goal
         }
     }
 
-    public ChecklistGoal(int points, string title, string description, bool goalComplete, int currentCount, int targetCount,  int bonusPoints) : base(points, title, description, goalComplete)
+    public ChecklistGoal(int points, string title, string description, bool goalComplete, int currentCount, int targetCount, int bonusPoints) : base(points, title, description, goalComplete)
     {
         _targetCount = currentCount;
         _bonusPoints = bonusPoints;

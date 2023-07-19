@@ -2,10 +2,27 @@ using System;
 
 public class Games : VideosGames
 {
-    private int _gamePrice;
+    private string _gameCategory;
 
-    public Games(string purchaseTitle, string purchaseSystem, string purchaseDescription, int gamePrice) : base(purchaseTitle, purchaseSystem, purchaseDescription)
+    public int _type = 1;
+
+    public Games(string purchaseTitle, string purchaseSystem, int purchasePrice, string gameCategory) : base(purchaseTitle, purchaseSystem, purchasePrice)
     {
-        _gamePrice = gamePrice;
+        _gameCategory = gameCategory;
+    }
+
+    public override void DisplayPurchases()
+    {
+        Console.WriteLine($"{_purchaseTitle}, {_purchaseSystem} - ${_purchasePrice}");
+    }
+
+    public override int GetTotal()
+    {
+        return _purchasePrice;
+    }
+
+    public override string SavePurchase()
+    {
+        return $"{_type}, {_purchaseTitle}, {_purchaseSystem}, {_purchasePrice}, {_gameCategory}";
     }
 }

@@ -1,5 +1,3 @@
-using System;
-
 public class EternalGoal : Goal
 {
     public int _currentCount;

@@ -2,12 +2,28 @@ using System;
 
 public class GameEquipment : VideosGames
 {
-    public string _equipType;
-    public int _equipPrice;
-    public GameEquipment(string purchaseTitle, string purchaseSystem, string purchaseDescription, string equipType, int equipPrice) : base(purchaseTitle, purchaseSystem, purchaseDescription)
+    private string _equipType;
+    private string _equipCategory;
+    public int _type = 3;
+    public GameEquipment(string purchaseTitle, string purchaseSystem, int purchasePrice, string equipType, string equipCategory) : base(purchaseTitle, purchaseSystem, purchasePrice)
     {
         equipType = _equipType;
-        equipPrice = _equipPrice;
+        equipCategory = _equipCategory;
+    }
+
+    public override void DisplayPurchases()
+    {
+        Console.WriteLine($"{_purchaseTitle}, {_purchaseSystem} - ${_purchasePrice}");
+    }
+
+    public override int GetTotal()
+    {
+        return _purchasePrice;
+    }
+
+    public override string SavePurchase()
+    {
+        return $"{_type}, {_purchaseTitle}, {_purchaseSystem}, {_purchasePrice}, {_equipType}, {_equipCategory}";
     }
 
 }

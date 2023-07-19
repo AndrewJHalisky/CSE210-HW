@@ -4,14 +4,20 @@ public abstract class VideosGames
 {
     public string _purchaseTitle;
     public string _purchaseSystem;
-    public string _purchaseDescription;
+    public int _purchasePrice;
     public int _purchaseRemove;
 
-    public VideosGames(string purchaseTitle, string purchaseSystem, string purchaseDescription)
+    public VideosGames(string purchaseTitle, string purchaseSystem, int purchasePrice)
     {
         _purchaseTitle = purchaseTitle;
         _purchaseSystem = purchaseSystem;
-        _purchaseDescription = purchaseDescription;
+        _purchasePrice = purchasePrice;
     }
+
+    public abstract int GetTotal();
+
+    public abstract void DisplayPurchases();
+
+    public abstract string SavePurchase();
 
 }

@@ -2,12 +2,28 @@ using System;
 
 public class DigitalVideos : VideosGames
 {
-    public string _mobileType;
-    public int _digitalPrice;
+    private string _digitalType;
+    private string _digitalCategory;
+    public int _type = 5;
 
-    public DigitalVideos(string purchaseTitle, string purchaseSystem, string purchaseDescription, string mobileType, int digitalPrice) : base(purchaseTitle, purchaseSystem, purchaseDescription)
+    public DigitalVideos(string purchaseTitle, string purchaseSystem, int purchasePrice, string digitalType, string digitalCategory) : base(purchaseTitle, purchaseSystem, purchasePrice)
     {
-        mobileType = _mobileType;
-        digitalPrice = _digitalPrice;
+        digitalType = _digitalType;
+        digitalCategory = _digitalCategory;
+    }
+
+    public override int GetTotal()
+    {
+        return _purchasePrice;
+    }
+
+    public override void DisplayPurchases()
+    {
+        Console.WriteLine($"{_purchaseTitle}, {_purchaseSystem} - ${_purchasePrice}");
+    }
+
+    public override string SavePurchase()
+    {
+        return $"{_type}, {_purchaseTitle}, {_purchaseSystem}, {_purchasePrice}, {_digitalCategory}, {_digitalType}";
     }
 }
